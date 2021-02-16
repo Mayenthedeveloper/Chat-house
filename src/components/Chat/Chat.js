@@ -3,7 +3,8 @@ import React from 'react';
 function Chat(){
     return(
         <div>
-            Chat Screen
+            <h1>Chat Screen</h1>
+            <p><b>Welcome Mayen</b></p>
         </div>
     )
 }
