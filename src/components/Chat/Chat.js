@@ -1,10 +1,14 @@
 import React from 'react';
+import Navbar from './components/Navbar/Navbar'
+
 
 function Chat(){
     return(
-        <div>
-            <h1>Chat Screen</h1>
-            <p><b>Welcome Mayen</b></p>
+        <div id='chat-container'>
+            <Navbar />
+            <div id='chat-wrap'>
+                Data
+            </div>
         </div>
     )
 }
