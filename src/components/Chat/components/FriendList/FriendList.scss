@@ -1,0 +1,42 @@
+@import "../../../../assets/scss/variables";
+
+#friends {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  background-color: #fff;
+  margin-bottom: 1rem;
+
+  @media (min-width: 800px) {
+    flex-grow: 1;
+    margin-right: 2rem;
+    max-width: 250px;
+    min-width: 250px;
+    margin-bottom: 0;
+  }
+
+  #title {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: flex-end;
+
+    button {
+      border: none;
+      background-color: $bg-main;
+      color: white;
+      width: 60px;
+      padding: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-left: 20px;
+    }
+  }
+}
+
+hr {
+  border-top: 1px solid #cfcfcf;
+  width: 100%;
+  margin-bottom: 0;
+}
