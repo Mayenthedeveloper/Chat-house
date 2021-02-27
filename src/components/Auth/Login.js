@@ -3,16 +3,26 @@ import loginImage from "../../assets/images/login.png";
 import { Link } from "react-router-dom";
 import "./Auth.scss";
 import axios from "axios";
-import AuthService from "../../services/authService";
 
-function Login() {
+import AuthService from "../../services/authService";
+import { login } from "../../store/actions/auth";
+
+import { useDispatch } from "react-redux";
+
+const Login = ({ history }) => {
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState("john.doe@gmail.com");
   const [password, setPassword] = useState("secret");
 
   const submitForm = (e) => {
     e.preventDefault();
 
-    AuthService.login({ email, password }).then((res) => console.log(res));
+    dispatch(login({ email, password }, history));
+
+    // dispatch(login({ email, password })).then(() => history.push("/"));
+
+    // AuthService.login({ email, password }).then((res) => console.log(res));
     // axios
     //   .post("http://localhost:8000/login", { email, password })
     //   .then((res) => {
@@ -22,7 +32,7 @@ function Login() {
     //     console.log("err", err);
     //   });
 
-    console.log({ email, password });
+    // console.log({ email, password });
   };
   return (
     <div id="auth-container">
@@ -63,6 +73,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;
