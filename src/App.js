@@ -2,6 +2,8 @@ import React from "react";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import Chat from "./components/Chat/Chat";
+import ProtectedRoute from "./components/Router/ProtectedRoute";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import "./App.scss";

@@ -12,6 +12,22 @@ const AuthService = {
         throw err;
       });
   },
+
+  register: (data) => {
+    return API.post("/register", data)
+      .then(({ data }) => {
+        API.defaults.headers["Authorization"] = `Bearer ${data.token}`;
+        return data;
+      })
+      .catch((err) => {
+        console.log("Auth Service error", err);
+        throw err;
+      });
+  },
+
+  register: (data) => {
+    API.defaults.headers["Authorization"] = "";
+  },
 };
 
 export default AuthService;
